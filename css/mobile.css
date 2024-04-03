@@ -1,0 +1,132 @@
+@media (min-width: 320px) and (max-width: 480px) {
+   
+    .swiper-loop {
+        width:100%;
+      }
+
+    .partner-list {
+        justify-content: center;
+    
+        
+        
+    }
+    .partner-list  li {
+    border: 1px solid #ffffff47;
+    padding: 10px;
+    border-radius: 3px;
+  }
+
+.contract-address {
+    font-size: 14px;
+}
+.close-button {
+    right: 7px;
+}
+.brand-info-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .brand-info li{
+    border:none !important;
+  }  
+    .cake-navbar ul li a  {
+
+    }
+    .ann-sec {
+        width: 100%;
+    }
+    .brand-info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .capa-section {
+        background-size: cover;
+    }
+    .announcebox {
+        border-radius: 15px;
+        padding: 15px 10px;
+    }
+    .news-block {
+        width: 100%;
+    }
+    #stats .mt-6 {
+        margin-top: 0 !important;
+    }
+    .announcebox:before {
+        left: 0;
+    }
+    .vlist {
+        flex-direction: column;
+    }
+    .stats-content ul {
+        margin-left: 0 !important;
+    }
+
+    .memes-section {
+        overflow: hidden !important;
+        width: 100%;
+    }
+    .flex-box .flex-col {
+        width: 100%;
+    }
+    .flex-box {
+        flex-wrap: wrap;
+    }
+    .cake-navbar ul {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        border-radius: 12px !important;
+        display: none;
+    }
+
+    .community-marketplace {
+        line-height: 1;
+    }
+    .seven span {
+        font-size: 35px;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+    .button-nav {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .mySwiper .swiper-slide {
+        width: 100% !important;
+    }
+
+    .fixed-active {
+        margin-top:0;
+        position: static !important;
+    }
+    .title {
+        font-size: 24px;
+    }
+
+    .mySwiperTeam {
+        padding-top:50px;
+        padding-bottom: 50px;
+    }
+
+    .cost-nav {
+        flex-direction: column;
+    }
+    .cost-nav img {
+        display:none;
+    }
+    .lapi-moc {
+        display:none;
+    }
+
+    .pop-title {
+        --font-size: 50px;
+        margin-top:15px;
+    }
+}

@@ -1,0 +1,1138 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#5B24B2',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+ 
+  <header class="bg-theme ">
+    <nav class="mx-auto flex items-center justify-between p-4 container" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Bucle Logo</span>
+          <img class="h-12 w-auto" src="./img/logo-white.svg" alt="">
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white mobile-trigger">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <div class="relative">
+          <button type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white drop-trigger" aria-expanded="false">
+            Product
+            <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+  
+          
+           
+         
+          <div class="absolute hidden drop-menu -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+            <div class="p-4">
+              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                  </svg>
+                </div>
+                <div class="flex-auto">
+                  <a href="#" class="block font-semibold text-gray-900">
+                    Analytics
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">Get a better understanding of your traffic</p>
+                </div>
+              </div>
+              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                  </svg>
+                </div>
+                <div class="flex-auto">
+                  <a href="#" class="block font-semibold text-gray-900">
+                    Engagement
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">Speak directly to your customers</p>
+                </div>
+              </div>
+              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                  </svg>
+                </div>
+                <div class="flex-auto">
+                  <a href="#" class="block font-semibold text-gray-900">
+                    Security
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">Your customers’ data will be safe and secure</p>
+                </div>
+              </div>
+              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                </div>
+                <div class="flex-auto">
+                  <a href="#" class="block font-semibold text-gray-900">
+                    Integrations
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">Connect with third-party tools</p>
+                </div>
+              </div>
+              <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                  <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                  </svg>
+                </div>
+                <div class="flex-auto">
+                  <a href="#" class="block font-semibold text-gray-900">
+                    Automations
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">Build strategic funnels that will convert</p>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+              <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z" clip-rule="evenodd" />
+                </svg>
+                Watch demo
+              </a>
+              <a href="#" class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
+                </svg>
+                Contact sales
+              </a>
+            </div>
+          </div>
+        </div>
+  
+        <a href="#" class="text-sm font-semibold leading-6 text-white">Features</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-white">Marketplace</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-white">Company</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        
+        <a href="#" class="theme-btn">Get in Touch!</a>
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="hidden mobile-menu" role="dialog" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <!-- <div class="fixed inset-0 z-10"></div> -->
+      <div class=" fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 close-btn">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <div class="-mx-3">
+                <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" aria-controls="disclosure-1" aria-expanded="false">
+                  Product
+                  <!--
+                    Expand/collapse icon, toggle classes based on menu open state.
+  
+                    Open: "rotate-180", Closed: ""
+                  -->
+                  <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                <div class="mt-2 space-y-2" id="disclosure-1">
+                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Analytics</a>
+                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Engagement</a>
+                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Security</a>
+                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Integrations</a>
+                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Automations</a>
+                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Watch demo</a>
+                  <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact sales</a>
+                </div>
+              </div>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+            </div>
+            <div class="py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+      <main class="flex overflow-hidden relative flex-col justify-center pb-24 pt-16 w-full max-md:px-5 max-md:max-w-full bg-violet-800">
+        <img class="prx" src="./img/box.png" alt="" class="object-cover absolute inset-0 size-full" />
+        <section class="relative mb-8 container">
+          <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <div class="flex relative flex-col justify-center self-stretch my-auto text-white max-md:mt-10 max-md:max-w-full">
+                <p class="text-xs uppercase tracking-[3.6px] max-md:max-w-full">BLOCKCHAIN INFRASTRUCTURE Architects</p>
+                <h1 class="mt-4 text-8xl font-bold tracking-tighter max-md:max-w-full max-md:text-4xl max-md:leading-[49px]">
+                  We code your <br> dreams into<br> blockchains
+                </h1>
+                <div class="flex gap-2 items-center pr-5 mt-7 text-lg font-semibold max-md:flex-wrap">
+                  <p class="self-stretch">Developing products on</p>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/112beeeb70c0d99e6bdb752246c135d9d56cf2e6826f821a66e9fbb007d05aaf?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 1" class="shrink-0 self-start aspect-[0.62] w-[13px]" />
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/be568344cb97685ab91f9e7a16fa2a102107f7123c63d8ba1360add512a1f99f?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 2" class="shrink-0 self-stretch my-auto w-5 aspect-square" />
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a12cb11da27b670ea3f6d0ecdfcc1fcc85f5685f918abeba966b7e9043c9a4e8?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 3" class="shrink-0 self-stretch my-auto w-5 aspect-square" />
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e235eaf0e6d980bef16a320746ce645f59aaebab04e59426d630a86957c2302?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 4" class="shrink-0 self-stretch my-auto w-5 aspect-square" />
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a620175db25ed8d6674eaefa5dcacf620322d9f0c54dffc7bd14e5e18a2a1050?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 5" class="shrink-0 self-stretch my-auto w-5 aspect-square" />
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bf94ffa28de466f33d8210418ab7a7635baafc7b3d284ff930065ea73c98d89?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 6" class="shrink-0 self-stretch my-auto w-5 aspect-square" />
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c35a8fb98d62c024cd1488f093aecdf061974d1dd9d44536cfd16f51edaff?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 7" class="shrink-0 self-stretch my-auto w-5 aspect-square" />
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1f87729f630e98a4ebec6b3e85d36225931a3e8d8402528f82a4a3a1b4e8aeee?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Product icon 8" class="shrink-0 self-stretch my-auto w-5 aspect-square" />
+                </div>
+                <div class="flex gap-2 justify-center self-start px-6 py-3 mt-8 text-base text-center text-violet-800 bg-white rounded-[100px] max-md:px-5">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bd8bc55a23a64dad4fc3dc5ee61ac87ab0d30a9515de9386bf3afe6782710ced?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Calendar icon" class="shrink-0 w-6 aspect-square" />
+                  <div class="my-auto">Schedule on Calendly</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2fc58a6fb526e8e2ee7645dad3545e97ac90d8512d982901761ea72d5d132236?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Blockchain infrastructure" class="grow w-full aspect-[1.3] max-md:mt-10 max-md:max-w-full lapi-moc" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class=" py-20 bg-sky-50">
+        <div class="container">
+          <h1 class="text-5xl font-bold text-black" style="margin-bottom: -35px;">About Bucle</h1>
+
+          <div class="swiper mySwiper" style="padding-top: 120px;">
+
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="flex flex-col max-md:max-w-full">
+                  <div class="flex justify-center items-center  w-8 h-8 text-sm text-white uppercase whitespace-nowrap bg-violet-800 rounded-full">02</div>
+                  <p class="mt-4 text-2xl text-black max-md:max-w-full mb-10">
+                    We are at the vanguard of transforming how people and businesses interact with the digital world, having been founded on the values of transparency, security, and decentralization.
+                  </p>
+
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/77b1c5414dda1f7669b95c4ae27de478c04a1bdce545da061c61b2c9df5e5e84?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Decorative image" class="w-full aspect-[2.13] max-md:max-w-full" />
+                 
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="flex flex-col max-md:max-w-full">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/77b1c5414dda1f7669b95c4ae27de478c04a1bdce545da061c61b2c9df5e5e84?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Decorative image" class="w-full aspect-[2.13] max-md:max-w-full" />
+                  <div class="justify-center flex items-center mt-10 w-8 h-8 text-sm text-white uppercase whitespace-nowrap bg-violet-800 rounded-full">02</div>
+                  <p class="mt-4 text-2xl text-black max-md:max-w-full">We are at the vanguard of transforming how people and businesses interact with the digital world, having been founded on the values of transparency, security, and decentralization.</p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="flex flex-col max-md:max-w-full">
+                  <div class="justify-center flex items-center mt-7 w-8 h-8 text-sm text-white uppercase whitespace-nowrap bg-violet-800 rounded-full">02</div>
+                  <p class="mt-4 text-2xl text-black max-md:max-w-full mb-10">
+                    We are at the vanguard of transforming how people and businesses interact with the digital world, having been founded on the values of transparency, security, and decentralization.
+                  </p>
+
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/77b1c5414dda1f7669b95c4ae27de478c04a1bdce545da061c61b2c9df5e5e84?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Decorative image" class="w-full aspect-[2.13] max-md:max-w-full" />
+                 
+                </div>
+
+              </div>
+              <div class="swiper-slide">
+                <div class="flex flex-col max-md:max-w-full">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/77b1c5414dda1f7669b95c4ae27de478c04a1bdce545da061c61b2c9df5e5e84?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Decorative image" class="w-full aspect-[2.13] max-md:max-w-full" />
+                  <div class="justify-center flex items-center mt-7 w-8 h-8 text-sm text-white uppercase whitespace-nowrap bg-violet-800 rounded-full">02</div>
+                  <p class="mt-4 text-2xl text-black max-md:max-w-full">We are at the vanguard of transforming how people and businesses interact with the digital world, having been founded on the values of transparency, security, and decentralization.</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="flex flex-col max-md:max-w-full">
+                  <div class="justify-center items-center w-8 h-8 text-sm text-white uppercase whitespace-nowrap bg-violet-800 rounded-full flex">02</div>
+                  <p class="mt-4 text-2xl text-black max-md:max-w-full mb-10">We are at the vanguard of transforming how people and businesses interact with the digital world, having been founded on the values of transparency, security, and decentralization.</p>
+
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/77b1c5414dda1f7669b95c4ae27de478c04a1bdce545da061c61b2c9df5e5e84?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Decorative image" class="w-full aspect-[2.13] max-md:max-w-full" />
+                 
+                </div>
+              </div>
+             
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+              
+            
+
+        
+        </div>
+      </section>
+     
+      <section class="spacer bg-slate-900" id="portfolio">
+
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0 container">
+
+          <div class="flex flex-col w-[24%] max-md:ml-0 max-md:w-full">
+
+            <div class="flex flex-col justify-center  mt-5 font-bold text-white max-md:mt-10 fixed-active">
+              <h2 class="mt-8 text-sm font-semibold uppercase tracking-[4.2px]">PORTFOLIO</h2>
+              <h3 class="mt-5 text-5xl max-md:text-4xl">
+                Some of our <br /> past works
+              </h3>
+              <a class="flex gap-2 justify-center px-6 py-2 mt-10 text-base bg-orange-500 rounded-[50px] max-md:px-5 w-[150px]">
+                <span>View All</span>
+              </a>
+            </div>
+
+
+          </div>
+          <div class="flex flex-col ml-5 w-[76%] max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
+              <div class="max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-8 pr-11 pb-3.5 pl-5 min-h-[293px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8f0d7a2702e973adf2c8943acc94bf3fd0ac60d9de22b6c5dbaf30a1ef9e32ea?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Hotel Booking App" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Hotel Booking App</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-8 pr-11 pb-3.5 pl-5 min-h-[293px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0b08877839fbdc16dfd08035031534b75bd4e4c9b7b09e81f76978ced4d4a85c?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Order Food App" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Order Food App</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div class="mt-12 max-md:mt-10 max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-7 pr-11 pb-4 pl-5 min-h-[292px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0cc3a176a0df28594d52a0c3d982ac57374913e0bfd0c5081eb355d8ef0d33fd?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Modern Startup" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Modern Startup</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-7 pr-11 pb-4 pl-5 min-h-[292px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/836349c762c9c7e7cb57d57710370ec9008b4f9b2299b28dfad3ef4d6b6a3eec?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Company Portfolio" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Company Portfolio</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="mt-12 max-md:mt-10 max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-7 pr-11 pb-4 pl-5 min-h-[292px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0cc3a176a0df28594d52a0c3d982ac57374913e0bfd0c5081eb355d8ef0d33fd?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Modern Startup" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Modern Startup</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-7 pr-11 pb-4 pl-5 min-h-[292px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/836349c762c9c7e7cb57d57710370ec9008b4f9b2299b28dfad3ef4d6b6a3eec?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Company Portfolio" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Company Portfolio</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="mt-12 max-md:mt-10 max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-7 pr-11 pb-4 pl-5 min-h-[292px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0cc3a176a0df28594d52a0c3d982ac57374913e0bfd0c5081eb355d8ef0d33fd?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Modern Startup" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Modern Startup</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex overflow-hidden relative flex-col grow pt-7 pr-11 pb-4 pl-5 min-h-[292px] max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/836349c762c9c7e7cb57d57710370ec9008b4f9b2299b28dfad3ef4d6b6a3eec?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Company Portfolio" class="object-cover absolute inset-0 size-full" />
+                      <h4 class="relative text-2xl text-white">Company Portfolio</h4>
+                      <p class="relative mt-48 text-xl text-white text-opacity-80 max-md:mt-10">
+                        Lorem ipsum dolor sit amet consectetur. Mattis varius dui non sed velit adipiscing ornare ullamcorper.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="bg-theme spacer">
+        <div class="container">
+          <div class="w-1/2 text-white max-md:w-full">
+            <p class="tag">TRENDING</p>
+            <h2 class="title">
+              Using the latest technology stacks to build mind blowing products for Web3 communities.
+            </h2>
+          </div>
+           
+          <div class="swiper-container swiper-loop mt-10" >
+            <div class="swiper-wrapper" style="align-items: center;">
+           
+              <div class="swiper-slide">
+                <img src="./img/bnb.png" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/op.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/polygon.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/op.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="swiper-container swiper-loop my-8" dir="rtl">
+            <div class="swiper-wrapper" style="align-items: center;">
+           
+              <div class="swiper-slide">
+                <img src="./img/bnb.png" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/op.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/polygon.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/op.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="swiper-container swiper-loop" data-swiper-speed="10000">
+            <div class="swiper-wrapper" style="align-items: center;">
+           
+              <div class="swiper-slide">
+                <img src="./img/bnb.png" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/op.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/polygon.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/op.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/bitcoin.png" alt="">
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col justify-center items-center px-16 py-20 w-full bg-dark max-md:px-5 max-md:max-w-full hidden lg:block">
+        <h2 class="mt-5 text-sm font-semibold text-center text-orange-500 uppercase tracking-[4.2px]">PROCESS</h2>
+        <h1 class="mt-2 text-5xl font-bold text-center text-white max-md:max-w-full max-md:text-4xl">Together till the end</h1>
+        <ul class="flex gap-5 mt-11 ml-24 text-sm leading-4 text-center capitalize text-slate-900 max-md:flex-wrap max-md:mt-10">
+          <li class="justify-center px-2 py-2 whitespace-nowrap bg-yellow-100 rounded-lg">Start</li>
+          <li class="my-auto text-xl leading-7 text-white uppercase tracking-[2.49px]">Sprint 1</li>
+          <li class="justify-center px-2.5 py-2 whitespace-nowrap bg-emerald-200 rounded-lg">Demo</li>
+          <li class="flex-auto my-auto text-xl leading-7 text-white uppercase tracking-[2.49px]">Sprint 2</li>
+          <li class="justify-center px-2.5 py-2 whitespace-nowrap bg-emerald-200 rounded-lg">Demo</li>
+          <li class="flex-auto my-auto text-xl leading-7 text-white uppercase tracking-[2.49px]">Sprint 3</li>
+          <li class="justify-center px-2 py-2 whitespace-nowrap bg-emerald-200 rounded-lg">Demo</li>
+          <li class="flex-auto my-auto text-xl leading-7 text-white uppercase tracking-[2.49px]">Sprint 4</li>
+          <li class="justify-center px-2.5 py-2 whitespace-nowrap bg-emerald-200 rounded-lg">Demo</li>
+          <li class="flex-auto my-auto text-xl leading-7 text-white uppercase tracking-[2.49px]">Sprint Ꝏ</li>
+          <li class="justify-center px-2.5 py-2 whitespace-nowrap bg-yellow-100 rounded-lg">Final</li>
+        </ul>
+        <div class="self-stretch mt-9 mb-5 max-md:pr-5 max-md:max-w-full">
+          <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-[17%] max-md:ml-0 max-md:w-full">
+              <div class="flex flex-col grow mt-1.5 text-xl leading-7 text-white">
+                <p>Product Discovery</p>
+                <div class="flex flex-col pt-16 pb-2.5">
+                  <p class="max-md:mr-2.5">Product Design</p>
+                  <p class="mt-12 max-md:mt-10 max-md:mr-2.5">Development</p>
+                  <p class="mt-12 max-md:mt-10">Testing & Bug Fixing</p>
+                  <p class="mt-12 max-md:mt-10 max-md:mr-2.5">Launch</p>
+                  <p class="mt-11 leading-7 max-md:mt-10 max-md:mr-2.5">
+                    Product optimization
+                    <br />
+                    & maintenance
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col ml-5 w-[83%] max-md:ml-0 max-md:w-full">
+              <img
+                loading="lazy"
+                src="./img/process-graph.svg"
+                alt="Process diagram showing the steps from product discovery to optimization and maintenance"
+                class="grow ml-3 w-full aspect-[3.66] max-md:max-w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex relative flex-col items-center p-20 w-full min-h-[851px] max-md:px-5 max-md:max-w-full bg-theme relative">
+       
+        <div class="flex relative flex-col px-px mt-6 max-w-full text-center w-[401px]">
+          <h1 class="self-center text-sm text-white uppercase tracking-[4.2px]">BLOCKCHAIN for ALL</h1>
+          <nav class="flex gap-2 justify-center mt-5 text-2xl whitespace-nowrap text-white text-opacity-50 cost-nav">
+            <a href="#" class="text-white">Startup</a>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a99470663853cfe2ee8cfc7a4888da651e42924556a8dee9a7314768b130140?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 my-auto border-2 border-solid aspect-[20] border-neutral-200 stroke-[2px] stroke-neutral-200 w-[42px]" />
+            <a href="#">Enterprise</a>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a99470663853cfe2ee8cfc7a4888da651e42924556a8dee9a7314768b130140?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 my-auto border-2 border-solid aspect-[20] border-neutral-200 stroke-[2px] stroke-neutral-200 w-[42px]" />
+            <a href="#">Government</a>
+          </nav>
+        </div>
+        <section class="flex overflow-hidden relative flex-col items-start py-3.5 pr-20 pl-4 mt-11 max-w-full text-white min-h-[200px] w-[800px] max-md:pr-5 max-md:mt-10">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d6342f141d6eaf83fc31f2da3439d3a1789ac118986e7138747302959192343b?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="object-cover absolute inset-0 size-full" style="border-radius: 10px;" />
+          <h2 class="flex relative gap-3 justify-center text-3xl">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/41ca9bb6a9aad8e339c2076160acf9fd96d62669fcd9292137e04f1347cd9a1e?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-1 border-4 border-white border-solid aspect-[0.1] blur-[1px] stroke-[4px] stroke-white" />
+            <span>Empowering Startups</span>
+          </h2>
+          <p class="relative mt-20 w-80 text-base max-md:mt-10">
+            We believe that lots of challenges <br /> of governments can be addressed by the proper application of Blockchain infrastructures.
+          </p>
+        </section>
+        <div class="relative mt-4 mb-5 max-w-full w-[800px]">
+          <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-[64%] max-md:ml-0 max-md:w-full">
+              <div class="relative grow px-6 py-4 w-full rounded-xl border border-solid bg-slate-900 border-zinc-300 border-opacity-0 max-md:px-5 max-md:mt-4 max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <div class="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
+                    <div class="flex relative grow gap-5 justify-between items-center text-base text-white text-opacity-50 max-md:mt-10">
+                      <ul class="flex flex-col self-stretch my-auto">
+                        <li class="justify-center p-1 bg-slate-900">Ordinals NFT</li>
+                        <li class="justify-center p-1 mt-10 bg-slate-900">ERC1155 NFT</li>
+                        <li class="justify-center p-1 mt-9 bg-slate-900">NFT DAO</li>
+                        <li class="justify-center p-1 mt-7 bg-slate-900">
+                          NFT MARKET <br /> PLACE
+                        </li>
+                        <li class="justify-center p-1 mt-7 bg-slate-900">ERC1155 NFT</li>
+                      </ul>
+                      <div class="shrink-0 self-stretch w-px h-80 bg-white border border-white border-solid"></div>
+                      <ul class="flex flex-col self-stretch my-auto">
+                        <li class="justify-center p-1 bg-slate-900">NFT Bridging</li>
+                        <li class="justify-center p-1 mt-9 bg-slate-900">Fractional NFT</li>
+                        <li class="justify-center p-1 mt-9 bg-slate-900">ERC721 NFT</li>
+                        <li class="justify-center p-1 mt-7 bg-slate-900">
+                          SOUL BOUND <br /> TOKEN
+                        </li>
+                        <li class="justify-center p-1 mt-7 bg-slate-900">Fractional NFT</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                    <div class="flex relative grow gap-5 justify-between text-base text-white text-opacity-50 max-md:mt-10">
+                      <div class="shrink-0 w-px h-80 bg-white border border-white border-solid"></div>
+                      <ul class="flex flex-col my-auto max-sm:w-full">
+                        <li class="justify-center p-1 bg-slate-900">NFT Staking</li>
+                        <li class="justify-center p-1 mt-9 bg-slate-900">NFT Staking</li>
+                        <li class="justify-center p-1 mt-9 bg-slate-900">Dynamic NFT</li>
+                        <li class="justify-center p-1 mt-7 bg-slate-900">
+                          NFT LENDING <br /> PROGRAM
+                        </li>
+                        <li class="justify-center p-1 mt-7 bg-slate-900">NFT Staking</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col  w-[36%] max-md:ml-0 max-md:w-full">
+              <div class="flex relative flex-col grow px-3 py-4 mx-auto w-full text-base text-white rounded-xl bg-slate-900 max-md:mt-4">
+                <div class="flex gap-2">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8559c54419099ac17081e893652eeef1484ac6bd1301745b3f48628b7ef7df3f?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 my-auto w-6 aspect-square fill-white" />
+                  <p>
+                    CBDC (Central Bank Digital <br /> Currency)
+                  </p>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8559c54419099ac17081e893652eeef1484ac6bd1301745b3f48628b7ef7df3f?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square fill-white" />
+                  <p class="my-auto">Land Registry on Blockchain</p>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8559c54419099ac17081e893652eeef1484ac6bd1301745b3f48628b7ef7df3f?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square fill-white" />
+                  <p class="my-auto">Health Data Management</p>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8559c54419099ac17081e893652eeef1484ac6bd1301745b3f48628b7ef7df3f?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square fill-white" />
+                  <p class="my-auto">Supply Chain Logistics</p>
+                </div>
+                <div class="flex gap-2 mt-4">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8559c54419099ac17081e893652eeef1484ac6bd1301745b3f48628b7ef7df3f?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square fill-white" />
+                  <p class="my-auto">Identity Solutions</p>
+                </div>
+                <button class="flex gap-2 justify-center px-4 py-2 mt-11 bg-white rounded-md text-slate-900 max-md:px-5 max-md:mt-10">
+                  <span class="my-auto">Start Project</span>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a3c1f0c6e6348939c9c1627ba7d95e3e757fb64c19bc2a4f3ee35c58da3b1e8?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex  relative flex-col items-center p-20 w-full min-h-[893px] max-md:px-5 max-md:max-w-full bg-dark">
+        <img src="./img/box-svg.svg" alt="Background image" class="object-cover absolute inset-0 size-full boxes" style="opacity: .2;" />
+        <h2 class="relative mt-5 text-white text-sm uppercase tracking-[4.2px]">Borderless innovation</h2>
+        <p class="title text-center text-white">Our blockchain solutions span<br> the global landscape.</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/899da0d5f206524a0f439314d51aac641eec8d65dfc0c489d6a880b7aff68569?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Blockchain solutions image" class="mt-20 mb-5 max-w-full aspect-[1.14] w-[532px] max-md:mt-10" />
+      </section>
+
+      <section class="flex flex-col self-stretch px-16 py-20 bg-white max-md:px-5">
+        <div class="mt-5 max-md:max-w-full">
+          <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-[85%] max-md:ml-0 max-md:w-full">
+              <div class="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+                <h2 class="text-sm font-medium text-left text-violet-800 uppercase tracking-[4.2px] max-md:max-w-full">OUR TEAM</h2>
+                <p class="mt-2 text-5xl font-bold text-black max-md:max-w-full max-md:text-4xl">Meet the architects of<br> innovation — our dynamic teams<br> shaping blockchain brilliance.</p>
+              </div>
+            </div>
+            <div class="flex flex-col ml-5 w-[15%] max-md:ml-0 max-md:w-full">
+              <div class="flex flex-col self-stretch my-auto text-center max-md:mt-10">
+                <button class="flex gap-2 justify-center px-6 py-4 text-base text-white bg-violet-800 rounded-[100px] max-md:px-5">
+                  <span>+</span>
+                  <span>Join the team</span>
+                </button>
+                <a href="#" class="mt-2 text-sm font-semibold text-violet-800 underline">Who are we looking for?</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="swiper mySwiperTeam py-10">
+
+          <div class="swiper-wrapper">
+          
+            
+            <div class="swiper-slide">
+              <div class="flex flex-col px-4 py-4 w-full rounded-xl bg-gray">
+
+                <div class="flex gap-1 text-xs text-blue-950 text-opacity-50 max-md:mr-0.5">
+                  <div class="flex gap-3">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/093e2e812475947de5132da14baaee8754d466bec7386f6ada189792dd137284?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="Profile picture of Mohit" class="shrink-0 max-w-full aspect-square w-[138px]">
+                    <div class="flex flex-col self-start">
+                      <p>This is,</p>
+                      <h3 class="text-2xl text-black">Mohit</h3>
+                      <p class="mt-4">a talented</p>
+                      <p class="text-sm text-neutral-600">UI/UX Designer</p>
+                    </div>
+                  </div>
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6ca9e57b23658c8d7628d3dfe6605f941b7d5a6e59080dbfece24b586fbf541?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="" class="z-10 shrink-0 self-start max-w-full aspect-[4.17] w-[141px]">
+                </div>
+                <h4 class="mt-6 text-black tracking-[4px] max-md:mr-0.5">EXPERTISE</h4>
+                <p class="mt-2 text-neutral-700 max-md:mr-0.5">Experienced UI/UX designer with over 3 <br> years of experience in various verticals</p>
+                <div class="flex gap-1 pr-16 mt-4 text-sm text-neutral-600 max-md:pr-5">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Information Architecture</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                </div>
+                <div class="flex gap-1 pr-3 mt-1 text-sm whitespace-nowrap text-neutral-600">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Wireframing</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="flex flex-col px-4 py-4 w-full rounded-xl bg-gray">
+                
+                <div class="flex gap-1 text-xs text-blue-950 text-opacity-50 max-md:mr-0.5">
+                  <div class="flex gap-3">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/093e2e812475947de5132da14baaee8754d466bec7386f6ada189792dd137284?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="Profile picture of Mohit" class="shrink-0 max-w-full aspect-square w-[138px]">
+                    <div class="flex flex-col self-start">
+                      <p>This is,</p>
+                      <h3 class="text-2xl text-black">Mohit</h3>
+                      <p class="mt-4">a talented</p>
+                      <p class="text-sm text-neutral-600">UI/UX Designer</p>
+                    </div>
+                  </div>
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6ca9e57b23658c8d7628d3dfe6605f941b7d5a6e59080dbfece24b586fbf541?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="" class="z-10 shrink-0 self-start max-w-full aspect-[4.17] w-[141px]">
+                </div>
+                <h4 class="mt-6 text-black tracking-[4px] max-md:mr-0.5">EXPERTISE</h4>
+                <p class="mt-2 text-neutral-700 max-md:mr-0.5">Experienced UI/UX designer with over 3 <br> years of experience in various verticals</p>
+                <div class="flex gap-1 pr-16 mt-4 text-sm text-neutral-600 max-md:pr-5">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Information Architecture</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                </div>
+                <div class="flex gap-1 pr-3 mt-1 text-sm whitespace-nowrap text-neutral-600">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Wireframing</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="flex flex-col px-4 py-4 w-full rounded-xl bg-gray">
+                
+                <div class="flex gap-1 text-xs text-blue-950 text-opacity-50 max-md:mr-0.5">
+                  <div class="flex gap-3">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/093e2e812475947de5132da14baaee8754d466bec7386f6ada189792dd137284?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="Profile picture of Mohit" class="shrink-0 max-w-full aspect-square w-[138px]">
+                    <div class="flex flex-col self-start">
+                      <p>This is,</p>
+                      <h3 class="text-2xl text-black">Mohit</h3>
+                      <p class="mt-4">a talented</p>
+                      <p class="text-sm text-neutral-600">UI/UX Designer</p>
+                    </div>
+                  </div>
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6ca9e57b23658c8d7628d3dfe6605f941b7d5a6e59080dbfece24b586fbf541?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="" class="z-10 shrink-0 self-start max-w-full aspect-[4.17] w-[141px]">
+                </div>
+                <h4 class="mt-6 text-black tracking-[4px] max-md:mr-0.5">EXPERTISE</h4>
+                <p class="mt-2 text-neutral-700 max-md:mr-0.5">Experienced UI/UX designer with over 3 <br> years of experience in various verticals</p>
+                <div class="flex gap-1 pr-16 mt-4 text-sm text-neutral-600 max-md:pr-5">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Information Architecture</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                </div>
+                <div class="flex gap-1 pr-3 mt-1 text-sm whitespace-nowrap text-neutral-600">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Wireframing</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="flex flex-col px-4 py-4 w-full rounded-xl bg-gray">
+                
+                <div class="flex gap-1 text-xs text-blue-950 text-opacity-50 max-md:mr-0.5">
+                  <div class="flex gap-3">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/093e2e812475947de5132da14baaee8754d466bec7386f6ada189792dd137284?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="Profile picture of Mohit" class="shrink-0 max-w-full aspect-square w-[138px]">
+                    <div class="flex flex-col self-start">
+                      <p>This is,</p>
+                      <h3 class="text-2xl text-black">Mohit</h3>
+                      <p class="mt-4">a talented</p>
+                      <p class="text-sm text-neutral-600">UI/UX Designer</p>
+                    </div>
+                  </div>
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6ca9e57b23658c8d7628d3dfe6605f941b7d5a6e59080dbfece24b586fbf541?apiKey=12e7c320d46245289ec7830139767e7e&amp;" alt="" class="z-10 shrink-0 self-start max-w-full aspect-[4.17] w-[141px]">
+                </div>
+                <h4 class="mt-6 text-black tracking-[4px] max-md:mr-0.5">EXPERTISE</h4>
+                <p class="mt-2 text-neutral-700 max-md:mr-0.5">Experienced UI/UX designer with over 3 <br> years of experience in various verticals</p>
+                <div class="flex gap-1 pr-16 mt-4 text-sm text-neutral-600 max-md:pr-5">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Information Architecture</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                  <span class="justify-center px-5 py-2 whitespace-nowrap bg-blue-950 bg-opacity-10 rounded-[50px]">UX</span>
+                </div>
+                <div class="flex gap-1 pr-3 mt-1 text-sm whitespace-nowrap text-neutral-600">
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Wireframing</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                  <span class="justify-center px-5 py-2 bg-blue-950 bg-opacity-10 rounded-[50px]">Storyboarding</span>
+                </div>
+              </div>
+            </div>
+
+         
+           
+          </div>
+          <div class="swiper-pagination"></div>
+
+        </div>
+
+
+
+      </section>
+      <section class="flex flex-col justify-center py-20 bg-dark">
+        <div class="flex justify-center items-center container">
+          <div class="flex overflow-hidden relative flex-col items-center py-20 w-full max-w-[1262px] min-h-[877px] max-md:max-w-full">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3d25917b467717257fedd472d0ecb34230a1b34698bf85a1901d67d272bd3436?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="object-cover absolute inset-0 size-full" />
+            <h2 class="relative mt-6 text-sm font-bold text-center text-white uppercase tracking-[4.2px]">OFFERINGS</h2>
+            <p class="relative mt-5 text-5xl font-bold text-center text-white w-[928px] max-md:max-w-full max-md:text-4xl">
+              Personalized offerings for members, delivering tailored excellence.
+            </p>
+            <div class="relative self-stretch mt-12 mb-5  max-md:mt-10 max-md:max-w-full">
+              <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                  <article class="flex relative flex-col grow py-4 w-full rounded-xl border border-solid bg-zinc-300 bg-opacity-10 border-zinc-300 border-opacity-20 max-md:mt-6">
+                    <div class="flex flex-col px-3">
+                      <header class="flex gap-1">
+                        <h3 class="text-2xl text-white">MVP</h3>
+                        <p class="text-base text-white text-opacity-50">Minimum viable product</p>
+                      </header>
+                      <p class="mt-6 text-base text-white">
+                        An MVP is a development technique where a new product is introduced in the market with basic features, but enough to get the attention of the consumers. The final product is released only after getting sufficient feedback from the product's initial users.
+                      </p>
+                      <div class="flex gap-1 mt-6 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Core features for early adopters</p>
+                      </div>
+                      <div class="flex gap-1 mt-4 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Validates market demand</p>
+                      </div>
+                      <div class="flex gap-1 mt-4 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Basis for iterations</p>
+                      </div>
+                      <div class="flex gap-1 mt-4 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Feedback-driven development</p>
+                      </div>
+                      <p class="self-center mt-14 text-base text-center text-white max-md:mt-10">
+                        6-7 Weeks Delivery Time
+                      </p>
+                    </div>
+                    <button class="justify-center items-center self-center px-6 py-4 mt-3 max-w-full text-base text-center text-white bg-violet-800 rounded-[100px] w-[321px] max-md:px-5">
+                      Enquire for MVP
+                    </button>
+                  </article>
+                </div>
+                <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                  <article class="flex relative flex-col grow py-4 w-full rounded-xl border border-solid bg-zinc-300 bg-opacity-10 border-zinc-300 border-opacity-20 max-md:mt-6">
+                    <div class="flex flex-col px-3">
+                      <header class="flex gap-1">
+                        <h3 class="text-2xl text-white">POC</h3>
+                        <p class="text-base text-white text-opacity-50">Proof of Concept</p>
+                      </header>
+                      <p class="mt-6 text-base text-white">
+                        A Proof of Concept is an exercise to test a certain hypothesis or theory that a particular idea can be turned into a reality. It's the first tangible form of your idea, often used to demonstrate functionality and to verify a certain concept or theory that can be achieved in development.
+                      </p>
+                      <div class="flex gap-1 mt-6 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4ed6e08386264d271590a16f290ff88b3f3360b8e2e53fdc31bc23877a07de8e?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Demonstrates feasibility</p>
+                      </div>
+                      <div class="flex gap-1 mt-4 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4ed6e08386264d271590a16f290ff88b3f3360b8e2e53fdc31bc23877a07de8e?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Tests idea's practicality</p>
+                      </div>
+                      <div class="flex gap-1 mt-4 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4ed6e08386264d271590a16f290ff88b3f3360b8e2e53fdc31bc23877a07de8e?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Minimal functionality</p>
+                      </div>
+                      <div class="flex gap-1 mt-4 text-base text-white">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4ed6e08386264d271590a16f290ff88b3f3360b8e2e53fdc31bc23877a07de8e?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Basis for funding opportunities</p>
+                      </div>
+                      <p class="self-center mt-14 text-base text-center text-white max-md:mt-10">
+                        1-2 Weeks Delivery Time
+                      </p>
+                    </div>
+                    <button class="justify-center items-center self-center px-6 py-4 mt-3 max-w-full text-base text-center text-white bg-violet-800 rounded-[100px] w-[321px] max-md:px-5">
+                      Enquire for POC
+                    </button>
+                  </article>
+                </div>
+                <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                  <article class="flex relative flex-col grow py-4 w-full text-base text-white rounded-xl border border-solid bg-white bg-opacity-10 border-zinc-300 border-opacity-20 max-md:mt-6">
+                    <div class="flex flex-col px-3">
+                      <h3 class="text-2xl">Production App</h3>
+                      <p class="mt-6">
+                        A production app refers to the final, fully developed version of your app that's ready to be used by end-users. It encompasses all the features and robustness required for daily operations and is fully supported for any issues end-users may encounter.
+                      </p>
+                      <div class="flex gap-1 mt-6">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Full feature set</p>
+                      </div>
+                      <div class="flex gap-1 mt-4 whitespace-nowrap">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Market-ready</p>
+                      </div>
+                      <div class="flex gap-1 mt-4">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Ongoing support and maintenance</p>
+                      </div>
+                      <div class="flex gap-1 mt-4">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/71029dda370e64bdb9dcc7877ddf928ca610929c232ad26deb465d9616c2c714?apiKey=12e7c320d46245289ec7830139767e7e&" alt="" class="shrink-0 w-6 aspect-square" />
+                        <p class="my-auto">Scalability and performance-focused</p>
+                      </div>
+                      <p class="self-center mt-16 text-center max-md:mt-10">
+                        8-10 Weeks Delivery Time
+                      </p>
+                    </div>
+                    <button class="justify-center items-center self-center px-6 py-4 mt-3 max-w-full text-center bg-violet-800 rounded-[100px] w-[321px] max-md:px-5">
+                      Enquire for Production
+                    </button>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col items-center container bg-white spacer">
+        <h2 class="text-base font-bold text-center text-violet-800 uppercase tracking-[4.8px] max-md:mt-10">PARTNERS</h2>
+        <p class="mt-2 text-5xl font-bold text-center text-black w-[853px] max-md:max-w-full max-md:text-4xl">Powerful collaborations, driving blockchain innovation with trusted partners.</p>
+        <div class="flex flex-wrap justify-center content-center items-center self-stretch px-16 mt-14 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+          <div class="flex gap-5 justify-center max-md:flex-wrap">
+            <div class="flex gap-5 justify-center max-md:flex-wrap">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e31f966e651e9562a985ec626963466c32e9e12d6d2f36d805e4b24b39471f9?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Partner logo" class="shrink-0 border border-solid aspect-[1.11] border-zinc-300 w-[84px]" />
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a42de6c0f9247ef8ca7ac60eb0a3e760d7315dd810501a183f40600e1d87c558?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Partner logo" class="shrink-0 max-w-full border border-solid aspect-[1.52] border-zinc-300 w-[115px]" />
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/607b165bf6c0640042d7f779ea5be798a1df820445c584668bd7921971849c2e?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Partner logo" class="shrink-0 max-w-full border border-solid aspect-[2.56] border-zinc-300 w-[193px]" />
+            </div>
+            <div class="flex gap-5 justify-center max-md:flex-wrap">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2c7466c89888e567091adb43ebd66147d19bae6e553988c85c1ee41a00264757?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Partner logo" class="border border-solid aspect-[3.45] border-zinc-300 w-[266px]" />
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/32f9198bc83e7d90828a1b9fd9467812a9cbef31eff70be497db374735bc2fb6?apiKey=12e7c320d46245289ec7830139767e7e&" alt="Partner logo" class="border border-solid aspect-[3.57] border-zinc-300 w-[274px]" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="w-full spacer bg-dark">
+        <div class="flex flex-col justify-center items-center self-stretch container">
+          <div class="mt-5 w-full max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+              <div class="flex flex-col w-3/12 max-md:ml-0 max-md:w-full" style="align-items: flex-start;">
+                <div class="flex flex-col text-base text-white max-md:mt-10">
+                  <img loading="lazy" src="./img/map.png" class="self-center aspect-[1.82] w-[205px]" />
+                  <div class="mt-4">Office</div>
+                  <div class=" mt-2">
+                    <div class="my-auto">A-102, Noida, UP</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col ml-5 w-9/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+                  <div class="text-base text-white max-md:max-w-full">Solutions</div>
+                  <div class="mt-4 max-md:max-w-full">
+                    <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                      <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                        <ul class="flex flex-col grow text-base text-white max-md:mt-10">
+                          <li>
+                            <a href="#" class="underline">Blockchain</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Web Development</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">AI/ML</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Game Development</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">IOT & Robotics Development</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                        <ul class="flex flex-col grow text-base text-white max-md:mt-10">
+                          <li>
+                            <a href="#">Enterprise Solution</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Digital Transformation</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Tools & Utility</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4 max-md:mr-2">Saas Application Development</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Cloud Application Development</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                        <ul class="flex flex-col grow text-base text-white max-md:mt-10">
+                          <li>
+                            <a href="#">Tools & Utility</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Enterprise Solution</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Cloud Application Development</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4">Digital Transformation</a>
+                          </li>
+                          <li>
+                            <a href="#" class="mt-4 max-md:mr-2">Saas Application Development</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-24 w-full  max-md:pr-5 max-md:mt-10 max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+              <div class="flex flex-col w-[24%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col mt-2.5 max-md:mt-10">
+                  <div class="text-base text-white">Socials</div>
+                  <ul class="flex gap-2.5 mt-2">
+                    <li>
+                      <a href="#">
+                        <img loading="lazy" src="./img/twitter.png" class="shrink-0 w-10 aspect-square" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img loading="lazy" src="./img/discord.png" class="shrink-0 w-10 aspect-square" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img loading="lazy" src="./img/telegram.png" class="shrink-0 w-10 aspect-square" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-col ml-5 w-[24%] max-md:ml-0 max-md:w-full">
+                <ul class="flex flex-col grow  text-base text-white max-md:mt-10">
+                  <li>
+                    <a href="#">Industries</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4 underline">Blockchain</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4">Web Development</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4">AI/ML</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4">Game Development</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4">IOT & Robotics Development</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col  w-[17%] max-md:ml-0 max-md:w-full">
+                <ul class="flex flex-col text-base text-white max-md:mt-10">
+                  <li>
+                    <a href="#">Company</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4 underline">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4">Clients</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="mt-4">Terms & conditions</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-1 self-start mt-32  text-base text-center text-white max-md:flex-wrap max-md:mt-10">
+            <div>BucleLabs ©</div>
+            <div>2023 All rights reserved</div>
+          </div>
+        </div>
+      </footer>
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/controller.js"></script>
+    
+   
+    <script>
+
+    </script>
+</body>
+</html>
